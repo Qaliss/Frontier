@@ -51,7 +51,7 @@ with st.expander("🎯 How to Use This Tool", expanded=True):
     **How it works:**
     1. **Search** - Enter a research topic. (Broader fields work best. More specific fields and searches may come in the future)
     2. **Browse** - View AI-generated summaries of the latest papers
-    3. **Chat** - Ask questions about the papers you've viewed
+    3. **Chat** - Ask questions about the papers you've viewed. (Number of messages with assistant is currently limited)
     
     **Try these example searches:**
     - "Quantum"
