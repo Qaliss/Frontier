@@ -9,6 +9,11 @@ if 'paper_summaries' not in st.session_state:
 if 'chat_history' not in st.session_state:
     st.session_state.chat_history = []
 
+if st.session_state.get('api_calls', 0) > 20:
+    st.error("🔥 Wow, this got popular! DM me if you want to keep using it.")
+    st.stop()
+
+
 # Construct the default API client
 paper_client = arxiv.Client()
 
@@ -136,6 +141,8 @@ with st.sidebar:
             context += f"\nPaper: {data['title']}\nSummary: {data['summary']}\n---"
             paper_count += 1
         
+        st.session_state.api_calls = st.session_state.get('api_calls', 0) + 1
+        
         try:
             # Show typing indicator in main area temporarily
             with st.spinner('🤔 Research Assistant is thinking...'):
@@ -219,6 +226,7 @@ with st.sidebar:
 # Main content area - Paper discovery
 if option:
     st.subheader(f"🔍 Latest papers on: **{option}**")
+    st.session_state.api_calls = st.session_state.get('api_calls', 0) + 1
     
     with st.container():
         search = arxiv.Search(
@@ -262,6 +270,7 @@ if option:
                         if paper_id not in st.session_state.paper_summaries:
                             with st.status("Generating AI summary...", expanded=False) as status:
                                 try:
+                                    st.session_state.api_calls = st.session_state.get('api_calls', 0) + 1
                                     response = ai_client.chat.completions.create(
                                         messages=[
                                             {
