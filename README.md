@@ -16,13 +16,19 @@ Try the live demo: https://frontier.streamlit.app/
 ### 🛠️ Tech Stack
 
 Frontend: Streamlit
+
 AI/LLM: Groq API (Llama 3.3 70B)
+
 Paper Search: ArXiv API
+
 Language: Python 3.8+
 
 ### 🎨 How It Works
 
-Search: Enter any research topic
-Discover: Browse AI-generated summaries of recent papers
-Chat: Ask questions about the papers you've viewed
-Learn: Get explanations tailored to your expertise level
+**Search**: Enter any research topic
+
+**Discover**: Browse AI-generated summaries of recent papers
+
+**Chat**: Ask questions about the papers you've viewed
+
+**Learn**: Get explanations tailored to your expertise level
