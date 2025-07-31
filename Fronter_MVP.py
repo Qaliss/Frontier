@@ -226,8 +226,7 @@ with st.sidebar:
 # Main content area - Paper discovery
 if option:
     st.subheader(f"🔍 Latest papers on: **{option}**")
-    st.session_state.api_calls = st.session_state.get('api_calls', 0) + 1
-    
+        
     with st.container():
         search = arxiv.Search(
             query=option,
