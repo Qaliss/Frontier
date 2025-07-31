@@ -2,7 +2,6 @@ import streamlit as st
 import arxiv
 from groq import Groq
 from datetime import datetime
-import random
 
 # Initialize session state
 if 'paper_summaries' not in st.session_state:
