@@ -21,7 +21,8 @@ ai_client = Groq(
 st.set_page_config(
     page_title="Frontier", 
     page_icon="🔬",
-    layout="wide"
+    layout="wide",
+    initial_sidebar_state='expanded'
 )
 
 # Header section
